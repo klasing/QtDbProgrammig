@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     // this works, but only when opening master
     //QString dsn = QString("Driver={SQL Server Native Client 11.0};Server=(localdb)\\Projects;Database=master;Uid=odbc;Pwd=odbc;");
     // this works, when altering user mappings with SQL Server Management Studio
-    QString dsn = QString("Driver={SQL Server Native Client 11.0};Server=(localdb)\\Projects;Database=test;Uid=odbc;Pwd=odbc;");
+    QString dsn = QString("Driver={SQL Server Native Client 11.0};Server=%1;Database=%2;Uid=odbc;Pwd=odbc;").arg(serverName).arg(dbName);
     db.setDatabaseName(dsn);
 
     if (db.open()) {
